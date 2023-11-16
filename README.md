@@ -9,6 +9,8 @@ Be able to clarify if there are any visible changes in derived topics for the re
 Evaluate listing descriptions to discern how hosts are promoting their spaces in the context of the new guidelines
 Categorize listings based on specific features to observe if particular groupings reduce following the law's introduction.
 
+The datasets for 12 months nyc data is located at https://www.dropbox.com/scl/fi/qn2u3exg7kmtmy22ydllv/nyc-airbnb.zip?rlkey=hn9iympw56fpp7p4fcfnzvil1&dl=0
+
 To install requirements: pip -r requirements.txt
 
 Exploratory Analysis
