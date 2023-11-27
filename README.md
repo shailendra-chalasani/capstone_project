@@ -17,7 +17,9 @@ Exploratory Analysis
 jupyter file name - description of what is being done in file
 
 Supervised Learning
-jupyter file name - description of what is being done in file
+Logistic.ipynb - This logistic model is based on the dataset from August to September. This should help us identify the features of a particular listing that are most likely to be influenced by the law.
+Logistic_v2.ipynb - This logistic model notebook is based on the dataset from before August and after September. Our aim is to explore how the features and market structure have changed before and after the introduction of the law.
+
 
 Topic Modeling
 GensimTopicModeling.ipynb - Topics modeled using gensim to compare topics generated pre law and post law.
