@@ -27,13 +27,57 @@ The datasets for this project consist of 12 months of NYC Airbnb data, which can
 
 ## Notebook Files
 
-- `Logistic.ipynb`: Analyzes how the features and market structure have changed before and after the introduction of the law.
-- `Logistic_v2.ipynb`: Examines how the features and market structure have changed before and after the introduction of the law.
+- `Prediction and immediate effect analysis.ipynb`: Analyzes the immediate effect for the regulation and prediction
+- `Comparative Analysis.ipynb`: Examines how the features and market structure have changed before and after the introduction of the law.
 - `GensimTopicModeling.ipynb`: Utilizes Gensim to model topics and compare topics generated before and after the law.
 - `notebook_nov02_stats.ipynb`: Conducts statistical analysis.
 - `notebook_nov09_viz.ipynb`: Provides visualizations.
 - `notebook_nov10_hypo.ipynb`: Conducts hypothesis testing.
 - `reviews_topics_over_time.ipynb`: Applies BERTopic on reviews.
+
+## Introduction to Prediction and immediate effect analysis.ipynb
+
+Number of listings decreased three time from August to September, and the trend continued from September to October. Our prediction analysis and the immediate effect for the regulation would base on the data from August (before the law) to September (after the law). 
+![image](https://github.com/shailendra-chalasani/capstone_project/assets/100872992/9185c64e-2683-483e-b789-7d4e3693125e)
+
+Feature preprocessing:
+"instant_bookable_": 1 if there's instant book option, 0 otherwise
+"host_is_superhost_": 1 if the host is superhost, 0 otherwise
+"maximum_nights_30”: We convert the maximum days of stay to a binary variable, with 0 indicating less than a month, and 1 indicating a month or more.
+“host_years”: calculated by how long they have been hosting until 2023
+“price”: logged price has a more symmetrical and balanced distribution.
+“Availability_30”: The number of days of availability in the next 30 days.
+“rating”: Since the Review_scores_rating is highly left skewed, we rank the ratings into three categories, with <4.5 being score 0, 4.5-4.8 being score 1, > 4.8 being score 2.
+“host_listings_count”: The distribution of host listings count is highly right skewed and the most of the host has 5 or less listings. We cap the number of listings to 5.
+“maximum_nights_30”: We convert the maximum days of stay to a binary variable, with 0 indicating less than a month, and 1 indicating a month or more.
+“neighborhood”: The number of listings in Staten Island is too small so we removed it. Then we set Manhattan as our baseline to avoid binary traps. 
+
+Logistic Regression Model:
+Using VIF as a tool to detect multicollinearity, and process False discovery rate to set significance threshold for multiple comparison.
+
+The outcomes of our modeling yield an F1 score of 0.92 for non-dropped listings (label 0) and an F1 score of 0.55 for dropped listings (label 1), with the recall for true positives standing at 0.58.
+
+Feature importance based on the coefficience:
+![image](https://github.com/shailendra-chalasani/capstone_project/assets/100872992/32be3c36-f1d2-43e3-9fb0-e37ee93ba107)
+
+Random Forest Model:
+The prediction recall score and F1 score are similar to the scores for Logistic model. Below is the feature importance; maximum nights_30, availiability_30, log_prices, host_years, and host_listings_count contribute the most: 
+![image](https://github.com/shailendra-chalasani/capstone_project/assets/100872992/f1f464e9-8b39-4d7a-84ff-664b7734aa06)
+
+
+## Introduction to Comparative Analysis.ipynb
+
+We used the dataset prior to July as pre-regulation period. Observing the dropping trend continued from September to October, we classified the dataset after October 1st as post-regulation period.
+
+Initially, we performed a logistic regression analysis on the pre-regulation dataset, employing Variance Inflation Factor (VIF) and False Discovery Rate (FDR) to address multicollinearity and to establish a threshold for comparing multiple features.
+
+Subsequently, we introduced interaction terms to assess the changes of the effect. We applied VIF and FDR again to ensure the robustness of the model and to determine appropriate thresholds for feature comparison.
+
+
+
+
+
+
 
 ## Team Members
 
