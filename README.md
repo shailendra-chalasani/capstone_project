@@ -27,7 +27,7 @@ The datasets for this project consist of 12 months of NYC Airbnb data, which can
 
 ## Notebook Files
 
-- `Prediction and immediate effect analysis.ipynb`: Analyzes the immediate effect for the regulation and prediction
+- `Prediction and Feature Analysis.ipynb`: Analyzes the immediate effect for the regulation and prediction
 - `Comparative Analysis.ipynb`: Examines how the features and market structure have changed before and after the introduction of the law.
 - `GensimTopicModeling.ipynb`: Utilizes Gensim to model topics and compare topics generated before and after the law.
 - `notebook_nov02_stats.ipynb`: Conducts statistical analysis.
@@ -35,7 +35,7 @@ The datasets for this project consist of 12 months of NYC Airbnb data, which can
 - `notebook_nov10_hypo.ipynb`: Conducts hypothesis testing.
 - `reviews_topics_over_time.ipynb`: Applies BERTopic on reviews.
 
-## Introduction to Prediction and immediate effect analysis.ipynb
+## Introduction to Prediction and Feature Analysis.ipynb
 
 Number of listings decreased three time from August to September, and the trend continued from September to October. Our prediction analysis and the immediate effect for the regulation would base on the data from August (before the law) to September (after the law). 
 ![image](https://github.com/shailendra-chalasani/capstone_project/assets/100872992/9185c64e-2683-483e-b789-7d4e3693125e)
